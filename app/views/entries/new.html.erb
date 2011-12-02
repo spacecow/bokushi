@@ -1,0 +1,5 @@
+<%= semantic_form_for [@timetable,@entry] do |f| %>
+  <%= f.input :departure, :as => :string %>
+  <%= f.input :arrival, :as => :string %>
+  <%= f.submit %>
+<% end %>
