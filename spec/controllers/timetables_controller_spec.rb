@@ -9,7 +9,7 @@ describe TimetablesController do
 
   describe "a user is not logged in" do
     controller_actions.each do |action,req|
-      if %w(show).include?(action)
+      if %w(show index).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @model.id)
           response.redirect_url.should be_nil
