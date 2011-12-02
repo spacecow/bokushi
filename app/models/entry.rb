@@ -1,6 +1,5 @@
 class Entry < ActiveRecord::Base
   belongs_to :timetable
-  before_save :convert_time
 
   def arrival_time
     arrival.strftime("%H:%M")
@@ -9,9 +8,16 @@ class Entry < ActiveRecord::Base
     departure.strftime("%H:%M")
   end
 
-  private
-
-    def convert_time
-      p self.arrival
+  def arrival=(s)
+    if data = s.match(/^(\d+)(\d\d)$/) 
+      s = "#{data[1]}:#{data[2]}"
     end
+    self[:arrival] = s
+  end
+  def departure=(s)
+    if data = s.match(/^(\d+)(\d\d)$/) 
+      s = "#{data[1]}:#{data[2]}"
+    end
+    self[:departure] = s
+  end
 end
