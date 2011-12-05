@@ -4,5 +4,6 @@ log/*.log
 tmp/
 .sass-cache/
 config/database.yml
+config/deploy.rb
 *.swo
 *.swp

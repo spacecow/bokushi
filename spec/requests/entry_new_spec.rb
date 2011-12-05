@@ -19,6 +19,18 @@ describe "Entries" do
         Entry.last.arrival_time.should eq "11:00"
         Entry.last.departure_time.should eq "19:00"
       end
+  
+      it "three numbers means an hour and minutes" do
+        fill_in_entry(:arr=>"112",:dep=>"345")
+        Entry.last.arrival_time.should eq "01:12"
+        Entry.last.departure_time.should eq "03:45"
+      end
+
+      it "four numbers means a 2-digt hour and minutes" do
+        fill_in_entry(:arr=>"1123",:dep=>"1453")
+        Entry.last.arrival_time.should eq "11:23"
+        Entry.last.departure_time.should eq "14:53"
+      end
     end
 
     context "create a new entry" do
