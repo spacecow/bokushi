@@ -19,11 +19,6 @@ describe "Entries" do
         Entry.last.arrival_time.should eq "11:00"
         Entry.last.departure_time.should eq "19:00"
       end
-  
-      it "three numbers means an hour and minutes", :focus => true do
-        fill_in_entry(:arr=>"112")
-        Entry.last.arrival_time.should eq "1:12"
-      end
     end
 
     context "create a new entry" do

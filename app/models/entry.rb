@@ -12,6 +12,5 @@ class Entry < ActiveRecord::Base
   private
 
     def convert_time
-      p self.arrival
     end
 end
