@@ -8,16 +8,18 @@ class Entry < ActiveRecord::Base
     departure.strftime("%H:%M")
   end
 
-  def arrival=(s)
-    if data = s.match(/^(\d+)(\d\d)$/) 
-      s = "#{data[1]}:#{data[2]}"
+  private
+
+    def arrival=(s)
+      if data = s.match(/^(\d+)(\d\d)$/) 
+        s = "#{data[1]}:#{data[2]}"
+      end
+      self[:arrival] = s
     end
-    self[:arrival] = s
-  end
-  def departure=(s)
-    if data = s.match(/^(\d+)(\d\d)$/) 
-      s = "#{data[1]}:#{data[2]}"
+    def departure=(s)
+      if data = s.match(/^(\d+)(\d\d)$/) 
+        s = "#{data[1]}:#{data[2]}"
+      end
+      self[:departure] = s
     end
-    self[:departure] = s
-  end
 end
