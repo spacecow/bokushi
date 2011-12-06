@@ -9,6 +9,8 @@ class EntriesController < ApplicationController
     @entry = @timetable.entries.build(params[:entry])
     if @entry.save
       redirect_to @timetable, :notice => created(:entry)
+    else
+      render :new
     end
   end
 

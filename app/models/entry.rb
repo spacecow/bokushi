@@ -1,5 +1,9 @@
 class Entry < ActiveRecord::Base
   belongs_to :timetable
+  attr_accessible :departure, :arrival, :vehicle
+  validates_presence_of :vehicle, :timetable
+
+  VEHICLES = [["Bus","bus"],["MAX","max"]]
 
   def arrival_time
     arrival && arrival.strftime("%H:%M")
@@ -9,7 +13,9 @@ class Entry < ActiveRecord::Base
   end
 
   def arrival=(s)
-    if data = s.match(/^(\d+)(\d\d)$/) 
+    if s.empty? || s.nil?
+      s = departure + 40.minutes 
+    elsif data = s.match(/^(\d+)(\d\d)$/) 
       s = "#{data[1]}:#{data[2]}"
     end
     self[:arrival] = s

@@ -3,6 +3,7 @@ class CreateEntries < ActiveRecord::Migration
     create_table :entries do |t|
       t.time :departure
       t.time :arrival
+      t.string :vehicle
       t.integer :timetable_id
 
       t.timestamps

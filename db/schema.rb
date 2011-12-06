@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20111202051213) do
   create_table "entries", :force => true do |t|
     t.time     "departure"
     t.time     "arrival"
+    t.string   "vehicle"
     t.integer  "timetable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
