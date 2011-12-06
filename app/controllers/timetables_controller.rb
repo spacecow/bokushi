@@ -4,6 +4,12 @@ class TimetablesController < ApplicationController
 
   def show
     @entries = @timetable.entries.order(sort_column+" "+sort_direction)
+    @entries = @entries.where(:vehicle => params[:vehicle]) if params[:vehicle]
+    #@entries.select!{|e| e.vehicle == params[:vehicle]} if params[:vehicle]
+    respond_to do |f|
+      f.html
+      f.json {render :json => @glossary.to_json}
+    end
   end
 
   def index

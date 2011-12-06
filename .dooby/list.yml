@@ -1,9 +1,11 @@
 --- 
-afa162: !ruby/object:Dooby::Task 
-  todo: calculate departure
 49ec7e: !ruby/object:Dooby::Task 
   todo: list entries on the timetable show page :done
 e0aa04: !ruby/object:Dooby::Task 
   todo: sort on departure and arrival :done
 aad5b1: !ruby/object:Dooby::Task 
   todo: add vehicle to entry :done
+cce1d1: !ruby/object:Dooby::Task 
+  todo: calculate departure for each vehicle
+"714703": !ruby/object:Dooby::Task 
+  todo: list entries in categories :doing

@@ -26,4 +26,10 @@ class Entry < ActiveRecord::Base
     end
     self[:departure] = s
   end
+
+  class << self
+    def vehicle(s)
+      VEHICLES.select{|a,b| b==s}.flatten.first
+    end
+  end
 end
