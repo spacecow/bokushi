@@ -1,3 +1,12 @@
 <%= title @timetable.route %>
 
+<table>
+<% @timetable.entries.each do |entry| %>
+  <tr>
+    <td><%= entry.departure_time %></td>
+    <td><%= entry.arrival_time %></td>
+  </tr>
+<% end %>
+</table>
+
 <%= link_to new(:entry), new_timetable_entry_path(@timetable) %>

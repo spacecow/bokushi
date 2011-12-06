@@ -2,10 +2,10 @@ class Entry < ActiveRecord::Base
   belongs_to :timetable
 
   def arrival_time
-    arrival.strftime("%H:%M")
+    arrival && arrival.strftime("%H:%M")
   end
   def departure_time
-    departure.strftime("%H:%M")
+    departure && departure.strftime("%H:%M")
   end
 
   def arrival=(s)
