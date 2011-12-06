@@ -1,7 +1,11 @@
 <%= title @timetable.route %>
 
 <table>
-<% @timetable.entries.each do |entry| %>
+  <tr>
+    <th><%= sortable 'departure' %></th>
+    <th><%= sortable 'arrival' %></th>
+  </tr>
+<% @entries.each do |entry| %>
   <tr>
     <td><%= entry.departure_time %></td>
     <td><%= entry.arrival_time %></td>

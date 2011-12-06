@@ -5,3 +5,5 @@ caa5ce: !ruby/object:Dooby::Task
   todo: add vehicle to entry
 49ec7e: !ruby/object:Dooby::Task 
   todo: list entries on the timetable show page :done
+e0aa04: !ruby/object:Dooby::Task 
+  todo: sort on departure and arrival :done
