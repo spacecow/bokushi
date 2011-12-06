@@ -11,6 +11,10 @@ class TimetablesController < ApplicationController
   end
 
   def create
-    redirect_to root_path
+    if @timetable.save
+      redirect_to timetables_path, :notice => created(:timetable)
+    else
+      render :new
+    end
   end
 end

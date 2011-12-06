@@ -1,5 +1,10 @@
 en:
+  base: "Base"
+  destination: "Destination"
   entry: "Entry"
+  timetable: "Timetable"
 
+  labels:
+    new: "New %{o}"
   successes:
     created: "Successfully created %{o}." 

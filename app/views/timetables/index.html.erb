@@ -1,0 +1,11 @@
+<%= title pt(:timetable) %>
+
+<table>
+  <% @timetables.each do |timetable| %>
+    <tr>
+      <td><%= link_to timetable.route, timetable %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to new(:timetable), new_timetable_path %>

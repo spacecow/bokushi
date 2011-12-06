@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20111202051213) do
   end
 
   create_table "timetables", :force => true do |t|
+    t.string   "base"
+    t.string   "destination"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
