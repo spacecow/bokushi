@@ -1,0 +1,6 @@
+<%= semantic_form_for [@timetable,@entry] do |f| %>
+  <%= f.input :departure, :as => :string, :input_html =>{:value => @entry.departure_time} %>
+  <%= f.input :arrival, :as => :string, :input_html =>{:value => @entry.arrival_time} %>
+  <%= f.input :vehicle, :as => :select, :collection => Entry::VEHICLES %>
+  <%= f.submit %>
+<% end %>

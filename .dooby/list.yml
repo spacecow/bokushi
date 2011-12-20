@@ -7,5 +7,7 @@ aad5b1: !ruby/object:Dooby::Task
   todo: add vehicle to entry :done
 cce1d1: !ruby/object:Dooby::Task 
   todo: calculate departure for each vehicle
-"714703": !ruby/object:Dooby::Task 
-  todo: list entries in categories :doing
+142af7: !ruby/object:Dooby::Task 
+  todo: list entries in categories :done
+ed38b2: !ruby/object:Dooby::Task 
+  todo: entry check in new and edit :done

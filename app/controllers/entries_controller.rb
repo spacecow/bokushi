@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_filter :load_timetable, :only => [:new,:create]
+  before_filter :load_timetable, :only => [:new,:create,:edit,:update]
 
   def new
     @entry = @timetable.entries.build
@@ -12,6 +12,10 @@ class EntriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @entry = @timetable.entries.find(params[:id])
   end
 
   private

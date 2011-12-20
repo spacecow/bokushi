@@ -9,8 +9,10 @@ describe "Entries" do
 
     context "view" do
       it "layout" do
-        find_field("Departure").should have_content("") 
+        find_field("Departure").value.should be_nil
+        find_field("Arrival").value.should be_nil
         options("Vehicle").should have_content("BLANK, Bus, MAX") 
+        selected_value("Vehicle").should be_nil
       end
     end
     context "convert time" do

@@ -13,7 +13,7 @@ describe "Timetables" do
       end 
 
       it "list timetables" do
-        table("",0).should == ["Sendai - Fukushima"]
+        tablemap("",0).should == ["Sendai - Fukushima"]
       end
     end
 
