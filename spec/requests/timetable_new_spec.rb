@@ -40,7 +40,7 @@ describe "Timetables" do
         lambda do
           click_button "Create Timetable"
         end.should change(Timetable,:count).by(0)
-        error_field(:base).should have_content("can't be blank")
+        li(:base).should have_blank_error
       end
 
       it "destination cannot be left empty" do
@@ -48,7 +48,7 @@ describe "Timetables" do
         lambda do
           click_button "Create Timetable"
         end.should change(Timetable,:count).by(0)
-        error_field(:destination).should have_content("can't be blank")
+        li(:destination).should have_blank_error
       end
     end
   end

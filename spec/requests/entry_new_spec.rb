@@ -7,6 +7,12 @@ describe "Entries" do
       visit new_timetable_entry_path(@timetable)
     end
 
+    context "view" do
+      it "layout" do
+        find_field("Departure").should have_content("") 
+        options("Vehicle").should have_content("BLANK, Bus, MAX") 
+      end
+    end
     context "convert time" do
       it "one number means an hour" do
         fill_in_entry(:dep=>"2",:arr=>"3")
