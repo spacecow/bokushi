@@ -52,8 +52,8 @@ describe "Timetables" do
 
         it "on the same page" do
           visit timetable_path(@timetable)
-          tablemap(:bus,0).should eq %w(10:00 10:40)
-          tablemap(:max,0).should eq %w(11:00 12:40)
+          tablemap(:bus,0).should eq %w(10:00 10:40 Edit)
+          tablemap(:max,0).should eq %w(11:00 12:40 Edit)
         end
 
         it "individual" do
@@ -69,6 +69,13 @@ describe "Timetables" do
         visit timetable_path(@timetable)
         click_link "New Entry"
         page.current_path.should eq new_timetable_entry_path(@timetable)
+      end
+
+      it "edit" do
+        entry = @timetable.entries << Factory(:entry)
+        visit timetable_path(@timetable)
+        click_link "Edit"         
+        page.current_path.should eq edit_timetable_entry_path(@timetable,entry)
       end
     end
   end
